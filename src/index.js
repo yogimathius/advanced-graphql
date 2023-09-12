@@ -8,7 +8,7 @@ const typeDefs = gql`
     id: Int
     createdAt: String
     description: String
-    url: String
+    title: String
     postedBy: User
     likes: [Like]
   }
@@ -37,7 +37,10 @@ const typeDefs = gql`
 
 const resolvers = {
   Query: {
-    posts: () => prisma.post.findMany(),
+    posts: () => {
+      console.log("getting posts");
+      return prisma.post.findMany();
+    },
     users: () => prisma.user.findMany(),
     likes: () => prisma.like.findMany(),
   },
