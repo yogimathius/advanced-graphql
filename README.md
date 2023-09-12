@@ -240,7 +240,7 @@ module.exports = resolvers;
 Now, create your Apollo Server in a file named `server.js`:
 
 ```javascript
-// server.js
+// src/index.js
 const { ApolloServer } = require("apollo-server");
 const typeDefs = require("./schema");
 const resolvers = require("./resolvers");
