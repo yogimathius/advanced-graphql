@@ -13,12 +13,12 @@ async function main() {
           create: [
             {
               title: "Offering tech help for coding questions 🖥️",
-              description:
+              content:
                 "If you're stuck on a coding problem, I'm here to help! #CodingHelp",
             },
             {
               title: "Looking for gardening advice 🌱",
-              description:
+              content:
                 "I'm a newbie gardener and could use some tips. #Gardening",
             },
           ],
@@ -35,7 +35,7 @@ async function main() {
           create: [
             {
               title: "Offering car repair expertise 🚗",
-              description: "Experienced mechanic ready to assist! #CarRepair",
+              content: "Experienced mechanic ready to assist! #CarRepair",
             },
           ],
         },

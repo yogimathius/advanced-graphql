@@ -12,6 +12,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "prisma": {
+    "seed": "ts-node prisma/seed.js"
+  },
   "dependencies": {
     "@prisma/client": "^5.2.0",
     "apollo-server": "^3.12.1",

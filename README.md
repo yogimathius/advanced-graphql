@@ -147,14 +147,6 @@ main()
   });
 ```
 
-### 7. Run Your Application
-
-You can run your Node.js application to test your Prisma setup:
-
-```bash
-node your-app.js
-```
-
 That's it! You've set up Prisma in your Node.js project and defined a basic data model. You can now use Prisma Client to perform database operations in a type-safe manner. As your project progresses, you can use Prisma to create, read, update, and delete data in your database.
 
 ### 1. Install Apollo Server and Dependencies
