@@ -5,6 +5,7 @@ const { PrismaClient } = require("@prisma/client");
 
 const prisma = new PrismaClient();
 
+console.log(prisma.post.findMany());
 const server = new ApolloServer({
   typeDefs,
   resolvers,
