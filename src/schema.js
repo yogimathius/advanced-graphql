@@ -5,6 +5,7 @@ const typeDefs = gql`
     id: ID!
     name: String!
     email: String!
+    posts: [Post]
   }
 
   type Post {
@@ -12,6 +13,7 @@ const typeDefs = gql`
     title: String!
     content: String!
     authorId: ID!
+    postedBy: User
   }
 
   type Query {
