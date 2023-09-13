@@ -1,12 +1,17 @@
 async function posts(parent, args, context, info) {
-  const posts = await context.prisma.post.findMany();
+  const posts = context.prisma.post.findMany();
 
   return posts;
 }
 
 async function users(parent, args, context, info) {
-  const users = await context.prisma.user.findMany();
-  console.log("users found: ", users);
+  console.log("retrieving users in query resolver");
+  const users = context.prisma.user.findMany({
+    include: {
+      posts: true,
+    },
+  });
+
   return users;
 }
 
