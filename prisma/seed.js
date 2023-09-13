@@ -1,70 +1,53 @@
 const { PrismaClient } = require("@prisma/client");
-
 const prisma = new PrismaClient();
 
 async function main() {
-  // Create users
-  const user1 = await prisma.user.create({
-    data: {
-      name: "User 1",
-      email: "user1@example.com",
-      password: "password1",
-      posts: {
-        create: [
-          {
-            description: "Post 1 by User 1",
-            url: "https://example.com/post1",
-          },
-          {
-            description: "Post 2 by User 1",
-            url: "https://example.com/post2",
-          },
-        ],
-      },
-      likes: {
-        create: [
-          {
-            post: {
-              create: {
-                description: "Post 3 by User 1",
-                url: "https://example.com/post3",
-              },
+  try {
+    // Insert users
+    const user1 = await prisma.user.create({
+      data: {
+        name: "Helpful Hannah",
+        email: "hannah@example.com",
+        password: "supportive1",
+        posts: {
+          create: [
+            {
+              title: "Offering tech help for coding questions 🖥️",
+              content:
+                "If you're stuck on a coding problem, I'm here to help! #CodingHelp",
             },
-          },
-        ],
-      },
-    },
-  });
-
-  const user2 = await prisma.user.create({
-    data: {
-      name: "User 2",
-      email: "user2@example.com",
-      password: "password2",
-      posts: {
-        create: [
-          {
-            description: "Post 4 by User 2",
-            url: "https://example.com/post4",
-          },
-        ],
-      },
-      likes: {
-        create: [
-          {
-            post: {
-              create: {
-                description: "Post 1 by User 1", // Liked by User 2
-                url: "https://example.com/post1",
-              },
+            {
+              title: "Looking for gardening advice 🌱",
+              content:
+                "I'm a newbie gardener and could use some tips. #Gardening",
             },
-          },
-        ],
+          ],
+        },
       },
-    },
-  });
+    });
 
-  console.log("Seed data created:", { user1, user2 });
+    const user2 = await prisma.user.create({
+      data: {
+        name: "Resourceful Rob",
+        email: "rob@example.com",
+        password: "problemSolver2",
+        posts: {
+          create: [
+            {
+              title: "Offering car repair expertise 🚗",
+              content: "Experienced mechanic ready to assist! #CarRepair",
+            },
+          ],
+        },
+      },
+    });
+
+    console.log("Seed data created:", { user1, user2 });
+  } catch (error) {
+    console.error("Error seeding data:", error);
+  } finally {
+    await prisma.$disconnect();
+  }
 }
 
 main()
