@@ -6,7 +6,7 @@ const path = require("path");
 const Query = require("./resolvers/Query");
 const Post = require("./resolvers/Post");
 const Mutation = require("./resolvers/Mutation");
-
+asdfasdfasdf
 const resolvers = {
   Query,
   Post,
